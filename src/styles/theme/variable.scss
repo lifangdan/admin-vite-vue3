@@ -1,0 +1,49 @@
+$theme_color_primary:#36B277 !default;
+$theme_color_success: #67C23A !default;
+$theme_color_warning: #FAAD15 !default;
+$theme_color_danger: #F56C6C !default;
+$theme_color_info: #999999 !default;
+
+$element_colors: (
+    'primary': (
+        'base': $theme_color_primary,
+    ),
+    "success": (
+        "base": $theme_color_success,
+    ),
+    "warning": (
+        "base": $theme_color_warning,
+    ),
+    "danger": (
+        "base": $theme_color_danger,
+    ),
+    "error": (
+        "base": #db2828,
+    ),
+    "info": (
+        "base": $theme_color_info,
+    ),
+);
+
+$base_padding:16px;
+
+$height_default_header: #F56C6C;
+$header_height: 50px;
+$header_bg_color: $theme_color_primary;
+$footer_height: 50px;
+
+$sidebar_width: 200px;
+$sidebar_collapse_width: 90px;
+$sidebar_bg: #fff;
+$el_menu_active_color:$theme_color_primary;
+$el_menu_bg_color:#fff !important;
+$el_menu_text_color:#333 !important;
+$el_menu_hover_bg_color: rgba(52,178,119, 0.3) !important;
+
+$tagsview_height: 40px;
+$tagsview_item_height: 30px;
+$tagsview_color:#666;
+$tagsview_active_color: $theme_color_primary;
+$tagsview_active_bg_color: #ebf7f1;
+
+$border_color: #e5e5e5;

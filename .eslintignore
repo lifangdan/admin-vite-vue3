@@ -1,0 +1,12 @@
+node_modules
+lib
+iconfont/
+**/iconfont.js
+**/lib
+*.md
+*.woff
+*.ttf
+dist
+public
+.husky
+.eslintrc.js
