@@ -31,5 +31,10 @@ export function deleteList (id) {
         method: 'delete'
     })
 }
+export function login (params) {
+    return fetch(`${config.apiBase}/login`, params, {
+        method: 'post'
+    })
+}
 
 

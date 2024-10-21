@@ -10,14 +10,14 @@
             </div>
             <el-dropdown class="user-name" trigger="hover" @command="handleCommand">
                 <span class="el-dropdown-link">
-                    {{username}}
+                    {{userInfo.username}}
                     <el-icon class="el-icon--right">
                         <arrow-down />
                     </el-icon>
                 </span>
                 <template #dropdown>
                     <el-dropdown-menu>
-                        <a href="https://github.com/lin-xin/vue-manage-system" target="_blank">
+                        <a href="https://github.com/lifangdan/admin-vite-vue3.git" target="_blank">
                             <el-dropdown-item>项目仓库</el-dropdown-item>
                         </a>
                         <el-dropdown-item command="user">个人中心</el-dropdown-item>
@@ -29,17 +29,24 @@
     </header>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { computed } from "vue";
 import { useRouter } from "vue-router"
+import { useUserStore } from '@/stores/user'
+import { removeCookie } from '@/utils'
 
 const router = useRouter()
-const username = ref('admin')
+const userStore = useUserStore()
+const userInfo = computed(() => userStore.userInfo)
+
+
 
 function handleCommand (command) {
     switch (command) {
         case 'user':
             break
         case 'logout':
+            userStore.setUserInfo({})
+            removeCookie('token')
             router.push("/login")
             break
         default:

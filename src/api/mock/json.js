@@ -17,7 +17,11 @@ const MockList = Mock.mock({
       'status|1': '@integer(1,2)',
       'updateTime': '@datetime',
     }
-  ]
+  ],
+  'login': {
+    token: '@string("lower", 32)',
+    username: 'admin',
+  }
 })
 const list = MockList.items
 export const getList = (params) => {
@@ -88,5 +92,19 @@ export const deleteItem = (id) => {
   return {
     data: true,
     code: 200
+  }
+}
+
+export const login = (params) => {
+  if (params && params.username === 'admin' && params.password === '123456') {
+    return {
+      data: MockList.login,
+      code: 200
+    } 
+  } else {
+    return {
+      data: { message:'用户名或密码错误' },
+      code: 500
+    }
   }
 }

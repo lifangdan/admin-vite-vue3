@@ -26,4 +26,8 @@ Mock.mock(RegExp(`${apiUrl}/([^d]*)+`), 'delete', (options) => {
   return json.deleteItem(id)
 })
 
+Mock.mock(`${apiUrl}/login`, 'post', (options) => {
+  const data = JSON.parse(options.body)
+  return json.login(data)
+})
 

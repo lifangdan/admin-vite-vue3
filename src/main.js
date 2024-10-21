@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import  piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import App from './App.vue'
 import router from './router'
 import config from '@/config'
@@ -10,15 +11,15 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import 'element-plus/dist/index.css'
 import './styles/main.scss'
 
-
 import '@/assets/iconfont/iconfont'
-
 // 全局组件
 import gloabComponents from '@/components'
 
 const app = createApp(App)
 
-app.use(createPinia())
+const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate)
+app.use(pinia)
 app.use(router)
 app.use(ElementPlus, {
     size: config.size,
