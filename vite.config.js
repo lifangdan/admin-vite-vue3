@@ -9,11 +9,30 @@ import eslint from 'vite-plugin-eslint'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import fs from 'fs'
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd())
+  
+  //vite初始化性能优化
+  const optimizeDepsElementPlusIncludes = ["element-plus/es"]
+  fs.readdirSync("node_modules/element-plus/es/components").map((dirname) => {
+    fs.access(
+      `node_modules/element-plus/es/components/${dirname}/style/css.mjs`,
+      (err) => {
+        if (!err) {
+          optimizeDepsElementPlusIncludes.push(
+            `element-plus/es/components/${dirname}/style/css`
+          )
+        }
+      }
+    )
+  })
 
   return {
+    optimizeDeps: {
+      include: optimizeDepsElementPlusIncludes,
+    },
     plugins: [
       vue(),
       eslint(),
