@@ -210,7 +210,6 @@ onMounted(() => {
     justify-content: space-between;
     height: $tagsview_height;
     border-bottom: 1px solid #e5e5e5;
-    margin-bottom: 16px;
     background: #fff;
     box-sizing: border-box;
     

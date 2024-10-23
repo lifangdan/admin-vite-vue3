@@ -4,15 +4,15 @@
         <Sidebar />
         <main class="main-layout">
             <TagsView />
-            <div class="main-container">
-                <router-view v-slot="{ Component }">
-                    <!-- <transition name="move" mode="out-in"> -->
-                        <!-- <keep-alive :include="tags.nameList"> -->
+            <router-view v-slot="{ Component }">
+                <transition name="el-fade-in-linear">
+                    <keep-alive :include="cachedViews">
+                        <div class="main-container">
                             <component :is="Component" />
-                        <!-- </keep-alive> -->
-                    <!-- </transition> -->
-                </router-view>
-            </div>
+                        </div>
+                    </keep-alive>
+                </transition>
+            </router-view>
             <Footer v-if="false"/>
         </main>
     </div>
@@ -27,6 +27,7 @@ import Footer from './components/footer'
 
 const store = useStore()
 const { isCollapse } = storeToRefs(store)
+const cachedViews=[]
 
 </script>
 <style scoped lang="scss">

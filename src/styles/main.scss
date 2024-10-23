@@ -94,8 +94,8 @@ li {
     transition:left .3s;
     .main-container{
       // height: calc(100% - $footer_height - $header_height);
-      height: calc(100% - $tagsview_height - 32px);
-      margin: 0 $base_padding;
+      height: calc(100% - $tagsview_height - 20px);
+      margin: 10px;
       background-color: #fff;
       .page-con{
         height: 100%;

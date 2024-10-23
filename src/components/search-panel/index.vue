@@ -2,7 +2,7 @@
 <template>
 	<section class="search-form-panel">
 		<div class="left">
-			<el-form :inline="true" :model="form" label-width="100px" ref="formRef">
+			<el-form :inline="true" :model="form" :label-width="labelWidth" ref="formRef">
 				<el-row class="flex">
 					<el-col
 						:xl="item.xl ? item.xl : xl"
@@ -171,7 +171,7 @@ const props = defineProps({
 	},
 	labelWidth:{
 		type: String,
-		default: '100px'
+		default: 'auto'
 	},
 	xl: {
 		// ≥1920px 响应式栅格数或者栅格属性对象
