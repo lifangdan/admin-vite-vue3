@@ -4,15 +4,14 @@
         <Sidebar />
         <main class="main-layout">
             <TagsView />
-            <router-view v-slot="{ Component }">
-                <transition name="el-fade-in-linear">
-                    <keep-alive :include="cachedViews">
-                        <div class="main-container">
-                            <component :is="Component" />
-                        </div>
+            <div class="main-container">
+                <router-view v-slot="{ Component }">
+                    <keep-alive :max="5">
+                        <component :is="Component" :key="route.name" v-if="route.meta?.keepAlive"/>
                     </keep-alive>
-                </transition>
-            </router-view>
+                    <component :is="Component" :key="route.name" v-if="!route.meta?.keepAlive"/>
+                </router-view>
+            </div>
             <Footer v-if="false"/>
         </main>
     </div>
@@ -20,14 +19,16 @@
 <script setup>
 import { useStore } from '@/stores'
 import { storeToRefs } from 'pinia'
+import { useRoute } from 'vue-router'
 import Header from './components/header'
 import Sidebar from './components/sidebar'
 import TagsView from './components/tagsView'
 import Footer from './components/footer'
 
 const store = useStore()
+const route = useRoute()
+
 const { isCollapse } = storeToRefs(store)
-const cachedViews=[]
 
 </script>
 <style scoped lang="scss">

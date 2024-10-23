@@ -6,8 +6,7 @@
         </div>
     </div>
 </template>
-
-<script setup>
+<script setup name="Home">
 
 </script>
 

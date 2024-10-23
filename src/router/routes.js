@@ -8,25 +8,27 @@ export const routes = [
         children: [
             {
                 path: '/home',
-                name: 'home',
+                name: 'Home',
                 component: () => import('@/views/home/index'),
                 meta: {
                     title: '首页',
                     icon: 'shouye',
+                    keepAlive: true
                 }
             },
             {
                 path: '/table',
-                name: 'table',
+                name: 'Table',
                 component: () => import('../views/table'),
                 meta: {
                     title: '表格传url',
-                    icon:'tishi'
+                    icon: 'tishi',
+                    keepAlive: true
                 },
             },
             {
                 path: '/table2',
-                name: 'table2',
+                name: 'Table2',
                 component: () => import('../views/table/table2'),
                 meta: {
                     title: '表格传data',
@@ -35,7 +37,7 @@ export const routes = [
             },
             {
                 path: '/test',
-                name: 'test',
+                name: 'Test',
                 component: () => import('@/views/home/test'),
                 meta: {
                     title: '测试',
@@ -44,7 +46,7 @@ export const routes = [
             },
             {
                 path: '/test4',
-                name: 'test4',
+                name: 'Test4',
                 component: () => import('@/views/home/test'),
                 meta: {
                     title: 'VUE2写法',

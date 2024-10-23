@@ -55,7 +55,8 @@
     </div>
     <addEditDialog ref="dialogRef" @update="isRefresh=!isRefresh"/>
 </template>
-  <script setup>
+
+  <script setup name="Table">
 import { onMounted } from 'vue'
 import { getList, deleteList } from '@/api/home'
 import { ElMessage } from 'element-plus'

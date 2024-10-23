@@ -10,6 +10,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import fs from 'fs'
+import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd())
@@ -49,6 +50,8 @@ export default defineConfig(({ command, mode }) => {
           ElementPlusResolver(),
         ],
       }),
+      //支持vue3的setup函数添加name写法
+      VueSetupExtend(),
     ],
     css: {
       preprocessorOptions: {
