@@ -102,6 +102,7 @@ const tableProps = [
 const dialogRef = ref(null)
 
 function handleSearch () {
+    console.log(searchForm.value)
     isRefresh.value = !isRefresh.value
 }
 

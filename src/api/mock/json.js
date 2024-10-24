@@ -30,7 +30,7 @@ export const getList = (params) => {
   let resultList = list.filter(
     (item) => !name || item.name.indexOf(name) > -1
   )
-  resultList = list.filter(
+  resultList = resultList.filter(
     (item) => !address || item.address.indexOf(address) > -1
   )
   resultList = resultList.filter(

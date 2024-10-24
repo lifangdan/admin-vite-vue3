@@ -1,16 +1,16 @@
 <template>
-    <el-menu
-        :default-active="activeIndex"
-        class="menus-list"
-        @select="handleSelect"
-        :unique-opened="true"
-        router>
-        <MenuItem 
-            v-for="(item,index) in routeList"
-            :item="item" 
-            :key="index">
-        </MenuItem>
-    </el-menu>
+        <el-menu
+            :default-active="activeIndex"
+            class="menus-list"
+            @select="handleSelect"
+            :unique-opened="true"
+            router>
+            <MenuItem 
+                v-for="(item,index) in routeList"
+                :item="item" 
+                :key="index">
+            </MenuItem>
+        </el-menu>
 </template>
 <script setup>
 import { computed } from 'vue'

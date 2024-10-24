@@ -439,8 +439,8 @@ watch(
     }
     .el-table {
         width: 100%;
-        flex: inherit;
-        max-height: calc(100% - 50px);
+        // flex: inherit;
+        // max-height: calc(100% - 50px);
     }
     .el-pagination {
         margin-top: 16px;

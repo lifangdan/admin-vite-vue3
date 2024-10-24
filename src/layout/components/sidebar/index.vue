@@ -6,7 +6,9 @@
             :class="{ 'is-active': !isCollapse }"
             iconName="indent"></svg-icon>
         </div>
-        <Menus :collapse="isCollapse" :class="isCollapse ? 'collapse-menu': 'no-collapse-menu'"/>
+        <el-scrollbar class="scrollbar-wrapper" :noresize="true" :native="true">
+            <Menus :collapse="isCollapse" :class="isCollapse ? 'collapse-menu': 'no-collapse-menu'"/>
+        </el-scrollbar>
     </div>
 </template>
 
@@ -122,5 +124,8 @@ function handleClick () {
             }
         }
     }
+}
+.scrollbar-wrapper{
+    height: calc(100% - 50px) !important;
 }
 </style>
