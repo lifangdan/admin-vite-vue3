@@ -275,6 +275,7 @@ onMounted(() => {
     }
     .tags-view-right{
         flex-shrink: 0;
+        margin-top: 9px;
         .app-breadcrumb.el-breadcrumb {
             display: inline-block;
             padding: 0 16px;
