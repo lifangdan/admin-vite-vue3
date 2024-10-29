@@ -1,12 +1,10 @@
 <template>
     <div class="page-con">
-        <div>
-            <el-button type="primary">按钮</el-button>
-            <div class="test">测试文字</div>
-        </div>
+        <echartMap/>
     </div>
 </template>
 <script setup name="Home">
+import echartMap from '@/components/echarts/echart-map.vue';
 
 </script>
 
